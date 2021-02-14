@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title> JS Form Validator </title>
+  </head>
+  <body>
+    <style>
+        body {
+            padding: 2em 3em;
+            background: #0f1018;
+            color: #d1dce6;
+        }
+    </style>
+
+    <h2> Hello, world </h2>
+
+    <form id="form-example">
+        <input type="text" name="name" placeholder="Name"/>
+        <input type="text" name="nick" placeholder="Nick"/>
+
+        <input type="submit" value="Confirm"/>
+    </form>
+
+    <script src="./jsform-validator.js"></script>
+    <script>
+
+        const form = new Validator('#form-example', {
+            name: 'min:12|max:12|required',
+            nick: 'min:6',
+        });
+
+        console.log(form);
+
+    </script>
+  </body>
+</html>
