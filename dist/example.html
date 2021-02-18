@@ -26,8 +26,9 @@
     <script>
 
         const form = new Validator('#form-example', {
-            name: 'min:12|max:12|required',
+            name: 'min:12|max:12',
             nick: 'min:6',
+            '*': 'required'
         });
 
         console.log(form);

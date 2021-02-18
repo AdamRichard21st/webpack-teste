@@ -20,8 +20,15 @@ export default class Validator
             // percorre por cada propriedade
             for (let [key, value] of Object.entries(params))
             {
-                // percorre por cada input encontrada
-                let inputs = form.querySelectorAll(`*[name="${key}"]`);
+                // seletor que será utilizado para consultar
+                // todos elementos condizentes com a chave
+                // percorrida atualmente
+                let selector = key == '*' ? '*[name]' : `*[name="${key}"]`;
+
+
+                // percorre por cada input encontrada de acordo
+                // com a chave atualmente percorrida
+                let inputs = form.querySelectorAll(selector);
 
 
                 // valida se alguma input foi encontrada
